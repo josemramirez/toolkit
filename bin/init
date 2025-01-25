@@ -9,8 +9,9 @@ command -v realpath >/dev/null 2>&1 || realpath() {
 }
 SCRIPT_PATH="$(realpath "${BASH_SOURCE[0]}")"
 SCRIPT_DIR="$(dirname "$SCRIPT_PATH")"
-TOOLKIT_ROOT="./overleaf"
-if [[ ! -d "./bin" ]] || [[ ! -d "./config" ]]; then
+TOOLKIT_ROOT="~/overleaf"
+echo "Los directorios son: $(TOOLKIT_ROOT)"
+if [[ ! -d "$TOOLKIT_ROOT/bin" ]] || [[ ! -d "$TOOLKIT_ROOT/config" ]]; then
   echo "ERROR: could not find root of overleaf-toolkit project (inferred project root as '$TOOLKIT_ROOT')"
   exit 1
 fi
